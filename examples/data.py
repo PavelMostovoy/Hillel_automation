@@ -1,6 +1,6 @@
 from random import randint
 
-raw_data = (1, 2, 3, 4, 5, "a", "12", [1, 2, 3])
+raw_data = (1, 2, 3, 4, 5, "a", "12", [1, 2, 3, "new element"], {1, 4, 5, 6})
 
 
 def generate_data(addition: int):
