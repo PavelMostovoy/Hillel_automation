@@ -10,3 +10,12 @@ def generate_data(addition: int):
         # print("next one")
         yield randint(0, addition)
         # print("new iteration")
+
+
+def generate_data_unlim(addition: int):
+    print("starting")
+    while True:
+        yield randint(0, addition)
+        # print("next one")
+        yield randint(0, addition)
+        # print("new iteration")
