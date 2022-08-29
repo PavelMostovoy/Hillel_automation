@@ -9,13 +9,13 @@ def teardown():
     print("basic teardown into module")
 
 
-def setup_module(module):
-    print("module setup")
-
-
-def teardown_module(module):
-    print("module teardown")
-
+# def setup_module(module):
+#     print("module setup")
+#
+#
+# def teardown_module(module):
+#     print("module teardown")
+#
 
 def setup_function(function):
     print("function setup")
