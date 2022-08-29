@@ -1,4 +1,4 @@
-import main
+import main_script
 
 print(f"My name is '{__name__}'")
 
@@ -7,8 +7,7 @@ print(f"My name is '{__name__}'")
 
 VARIABE = 23
 
-main.main("ty")
-
+main_script.our_funct(1, 3)
 
 def funct(variable):
     VARIABE = 230
