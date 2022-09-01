@@ -30,7 +30,7 @@ field_id = '//*[@id="id_username"]'
 
 
 field = driver.find_element(By.XPATH, field_id)
-button = driver.find_element(By.XPATH, button_identifier).
+button = driver.find_element(By.XPATH, button_identifier)
 
 field.send_keys("Some name ")
 time.sleep(10)
