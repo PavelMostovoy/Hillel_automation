@@ -1,0 +1,16 @@
+Precondition #0
+SUT is ready
+
+Precondition #1
+
+1*) browser should run
+2) open url page
+3) Fill data
+4) Submit
+5) Check that we are in.
+
+steps
+1) find Button "add user"
+2) Click on this button
+3) Fill the data
+4 ) Submit
