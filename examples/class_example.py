@@ -11,31 +11,34 @@ class OurNext(OurBasic):
 
 
 class NewClass:
-    __second_var = 456
+    second_var = "class var"
     first_var = 4445
 
     def __init__(self, first_var):
         print("in progress")
         self.first_var = first_var
-        self.__second_var = f"{first_var} - private"
 
     @classmethod
-    def functionality(cls, x):
-        cls.first_var = x * 5
-        print(cls.__second_var)
+    def functionality(cls):
+        # cls.second_var = "Class var"
+        print(cls.second_var)
 
 
-obj2 = NewClass(44444)
+#
+# obj2 = NewClass(44444)
 obj = NewClass("value")
+#
+# print(obj.first_var)
+#
+# obj.functionality(45)
+#
+# print(obj.first_var)
+#
+# obj.something_new = print
+#
+# obj.something_new("printed by class")
 
-print(obj.first_var)
+obj.second_var = "instance_var"
 
-obj.functionality(45)
-
-print(obj.first_var)
-
-obj.something_new = print
-
-obj.something_new("printed by class")
-
-print(obj.__second_var)
+obj.functionality()
+print(obj.second_var)
