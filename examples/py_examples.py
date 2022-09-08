@@ -4,8 +4,9 @@ import time
 def decorated(funct):
     def inner(*args, **kwargs):
         start = time.perf_counter()
-        funct(*args, **kwargs)
+        result = funct(*args, **kwargs)
         print(time.perf_counter() - start)
+        return result
 
     return inner
 
@@ -40,6 +41,6 @@ def time_counter(var_f, var_value=10):
 
 decorated_funct = decorated(calc_fun_01)
 
-calc_fun(10)
+print(calc_fun(10))
 
 decorated_funct(10)
