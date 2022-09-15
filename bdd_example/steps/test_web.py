@@ -2,7 +2,7 @@ from pytest_bdd import scenario, given, when, then, scenarios, parsers
 import requests
 from assertpy import assert_that
 
-scenarios('web_test.feature')
+scenarios('../features/web_test.feature')
 
 data = {"Test1": {"user_name": "admin", "password": "admin123"},
         "Test2": {"user_name": "ad", "password": "ad"}}
@@ -15,13 +15,13 @@ def step_impl(request, user):
     request.user = user_name
 
 
-@given(parsers.re("I have endpoint'(?P<endpoint>.*)'"))
+@given(parsers.re("I have endpoint '(?P<endpoint>.*)'"))
 def step_impl(request, endpoint):
     request.endpoint = endpoint
 
 
 @when("I go to endpoint page")
-def step_impl(request):
+def step_impl(request, ):
     authentication = request.user["user_name"], request.user["password"]
     request.response = requests.get(request.endpoint, auth=authentication)
 

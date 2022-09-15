@@ -25,7 +25,6 @@ try:
     driver.get("https://google.com")
     element = driver.find_element(By.XPATH, "/html/body/div[1]/div[2]/div/img")
     print(element.get_attribute("src"))
-
     driver.close()
 except subprocess.CalledProcessError:
     print("not started")

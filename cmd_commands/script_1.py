@@ -5,7 +5,7 @@ full_path = Path(__file__)
 root_path = full_path.parent.parent
 
 file_name = "new_file.txt"
-resources_folder = "resources_1"
+resources_folder = "resources"
 
 file_path = root_path.joinpath(resources_folder, file_name)
 
@@ -21,3 +21,5 @@ with open(file_path, "r+") as f:
     new_data = f.read()
 
 print(new_data)
+
+print(f" path for current working directory {Path.cwd()}")

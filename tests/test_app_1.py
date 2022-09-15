@@ -21,15 +21,13 @@ def setup_function(function):
     print("function setup")
 
 
-def teardown_function(function):
-    print("function teardown")
-
-
-def test_numbers_3_4():
+def test_numbers_3_4(request):
     print("test 3*4")
+    request.data = 345
     assert 3 * 4 == 12
 
 
-def test_strings_a_3():
+def test_strings_a_3(request):
+    local_data = request.data
     print("test a*3")
     assert 'a' * 3 == 'aaa'
