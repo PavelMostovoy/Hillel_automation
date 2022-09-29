@@ -9,7 +9,7 @@ def myfunc(a, b):
     global value
     value = randint(1, 3)
     time.sleep(value + b)
-    print(f"\nThread {a}, seonds to run = {value}")
+    print(f"\nThread {a}, seconds to run = {value}")
 
 
 thr1 = threading.Thread(target=myfunc, args=(1, 2)).start()

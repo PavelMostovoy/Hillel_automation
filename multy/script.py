@@ -21,7 +21,7 @@ def timer_fn(fn):
 
 @timer_fn
 def response_time(url):
-    return requests.get(url).status_code
+    return requests.get(url).elapsed.total_seconds()
 
 
 list_of_urls = []

@@ -12,7 +12,7 @@ def req(url=url):
     return r
 
 
-tasks = [url for x in range(10)]
+tasks = [url for x in range(100)]
 
 if __name__ == "__main__":
     start_time = time.time()
