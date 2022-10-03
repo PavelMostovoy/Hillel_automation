@@ -1,23 +1,38 @@
+import time
+
+start = time.time()
+
+
 class OurBilling:
-    def __init__(self, order_number: int, quantity: int, total_price: float):
+    _order_numbers = []
+
+    def __init__(self, order_number: int, quality: int, total_price: float):
+        if order_number in self._order_numbers:
+            order_number += time.time() - start
+        self._order_numbers.append(order_number)
         self.order_number = order_number
-        self.product_type = "stuff"
-        self.quantity = quantity
+        self.product_type = "staff"
+        self.quality = quality
         self.total_price = total_price
+
+    def get_order_numbers(self):
+        return self._order_numbers
 
 
 # order number
 # product type
-# quantity
-# total price
-
+# quality
+# overall price
+#
 # available or not
 # actual amount
-# return price per item
+# return price to item
 
 
 first = OurBilling(0, 2, 200.0)
-print(first.order_number)
-
 second = OurBilling(1, 3, 150.0)
-print(second.order_number)
+third = OurBilling(0, 2, 6.6)
+first.order_numbers = [1, 2, 3, 4]
+print(first.order_numbers)
+five = OurBilling(0, 0, 0.0)
+print(first.get_order_numbers())
