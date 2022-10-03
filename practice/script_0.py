@@ -59,7 +59,7 @@ five = OurBilling(0, 0, 0.0)
 print(first.get_order_numbers())
 
 print(third.price_per_item())
-
-print(first.product_type)
-first.product_type = "Apple"
-print(first.product_type)
+#
+# print(first.product_type)
+# first.product_type = "Apple"
+# print(first.product_type)
