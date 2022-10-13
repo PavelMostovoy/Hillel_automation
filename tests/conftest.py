@@ -1,9 +1,21 @@
+import subprocess
+
 import pytest
 
 
 def collect():
     return 42
 
+
+@pytest.fixture(scope="function")
+def docker():
+    port = 3456
+    subprocess.run(f"docker run -d --name selenium_chrome -p"
+                   f" {port}:4444 -v "
+                   f"/dev/shm:/dev/shm selenium/standalone-chrome",
+                   shell=True, check=True)
+    yield
+    subprocess.run("docker rm --force selenium_chrome", shell=True, check=True)
 
 @pytest.fixture(autouse=True)
 def fix_one():
