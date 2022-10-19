@@ -5,17 +5,17 @@ con = sqlite3.connect('local_db_new.db')
 cur = con.cursor()
 
 # Create table
-table_name = "stock_2"
+table_name = "stock"
 query = f"CREATE TABLE if not exists {table_name} (id integer)"
 cur.execute(query)
 
-sql_request = '''CREATE TABLE  if not exists stock
+sql_request = '''CREATE TABLE  if not exists stock_0
                (date text, trans text, id real, qty real, price real)'''
 
 cur.execute(sql_request)
 
 # Insert a row of data
-cur.execute(f"INSERT INTO stock VALUES ('2008-01-05','BUY','RHAT',100,38.14)")
+cur.execute(f"INSERT INTO stock_0 VALUES ('2008-01-05','BUY','RHAT',100,38.14)")
 
 # Save (commit) the changes
 con.commit()

@@ -1,42 +1,45 @@
-import sqlalchemy as db
+import sqlalchemy as alchemy
 
 # with debug
-# engine = db.create_engine('sqlite:///local_db.db', echo = True)
+# engine = alchemy.create_engine('sqlite:///local_db_new.db', echo = True)
 
-engine = db.create_engine('sqlite:///local_db.db')
+engine = alchemy.create_engine('sqlite:///local_db_new.db')
 connection = engine.connect()
 
-metadata = db.MetaData()
+metadata = alchemy.MetaData()
 
-stocks = db.Table('stocks', metadata, autoload=True, autoload_with=engine)
-secondary = db.Table('secondary', metadata, autoload=True, autoload_with=engine)
+stocks = alchemy.Table('stock', metadata, autoload=True, autoload_with=engine)
+stock_0 = alchemy.Table('stock_0', metadata, autoload=True,
+                        autoload_with=engine)
 
 # Print the column names
 
 # example for single table
-# query = db.select(census.c.date).filter(census.c.qty == 100,
-#                                         census.c.trans == "BUY")
+query = alchemy.select(stocks.c.date).filter(stocks.c.qty == 100,
+                                             stocks.c.trans == "BUY")
 
-query = db.select(stocks.c.date, ).join(secondary,
-                                        stocks.c.id == secondary.c.id)
-
+# Generate query
 print(query)
+print("*" * 20)
+
+query = alchemy.select(stocks.c.date, stock_0.c.date).join(stock_0,
+                                                           stocks.c.id ==
+                                                           stock_0.c.id)
+
+# print(query)
+
 
 data = connection.execute(query)
 data = data.fetchall()
 
 print(data)
-#
-# # Print full table metadata
-# print(repr(metadata.tables['stocks']))
-#
-# #Equivalent to 'SELECT * FROM census'
-# query = db.select([census])
-# query_1 = db.select([census]).where(census.c.qty == 70)
-#
-#
-# ResultProxy = connection.execute(query_1)
-# ResultSet = ResultProxy.fetchall()
-# print(ResultSet[:])
 
-print(metadata)
+# Print full table metadata
+# print(repr(metadata.tables['stock']))
+# print(metadata)
+
+query = alchemy.insert(stocks)
+values_list = [{'id': '2', 'trans': 'ram', 'qty': 80000, 'price': 12.5},
+               {'id': '4', 'trans': 'GHJI', 'qty': 800, 'price': 120.5}]
+
+results = connection.execute(query, values_list)
