@@ -1,13 +1,12 @@
 # -----------------------------------------------------------------------------
 # BEHAVE ENVIRONMENT:
+# Example file
 # -----------------------------------------------------------------------------
 
 import os
 import subprocess
 import time
 
-# from helpers.sut import Sut
-# from utilites.env import Env
 #
 #
 # def before_all(context):
