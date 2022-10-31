@@ -65,3 +65,11 @@ def step_impl(context):
     assert users.get_name(0) == second_user, \
         f"Users name are unexpected {users.get_name(0)}, {second_user}, " \
         f"{users.get_list()} "
+
+
+@step("We win this game")
+def step_impl(context):
+    """
+    :type context: behave.runner.Context
+    """
+    raise NotImplementedError(u'STEP: And We win this game')
