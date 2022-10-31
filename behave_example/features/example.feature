@@ -30,20 +30,20 @@ Feature: showing off behave
       | name | name_1 | name_3 |
       | Bob  | Bob    | Bob    |
       | Mike | Mike   | Mike   |
-      | Bob  | Mike   | Mike   |
+      | Bob  | Bob    | Mike   |
       | Bob  | Bob    | Bob    |
-      | Bill | Mike   | Mike   |
+      | Bill | Bill   | Mike   |
       | Mike | Mike   | Mike   |
-      | Bob  | Mike   | Mike   |
+      | Bob  | Bob    | Mike   |
 
-    @regression
-    @short
-    Examples: Second set
-      | name | name_1 | name_3 |
-      | Bob  | Bob    | Bob    |
-      | Mike | Mike   | Mike   |
-      | Bob  | Mike   | Mike   |
-      | Bob  | Bob    | Bob    |
-      | Bill | Mike   | Mike   |
-      | Mike | Mike   | Mike   |
-      | Bob  | Mike   | Mike   |
+#    @regression
+#    @short
+#    Examples: Second set
+#      | name | name_1 | name_3 |
+#      | Bob  | Bob    | Bob    |
+#      | Mike | Mike   | Mike   |
+#      | Bob  | Mike   | Mike   |
+#      | Bob  | Bob    | Bob    |
+#      | Bill | Mike   | Mike   |
+#      | Mike | Mike   | Mike   |
+#      | Bob  | Mike   | Mike   |
